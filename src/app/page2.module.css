@@ -1,0 +1,67 @@
+.main {
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.appheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    min-width: 100vw;
+}
+
+.titlecomponent { 
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40%;
+}
+
+.icon {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    font-size: 1rem;
+}
+.socials { 
+    font-size: 3.5rem;
+}
+
+.bio { 
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 90%;
+}
+.biotitle { 
+    font-size: 3rem;
+}
+.biotext{
+}
+
+.selector { 
+    display: flex;
+    min-width: 50vw;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+
+}
+.mediatypebutton { 
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    outline: none;
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+}

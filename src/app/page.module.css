@@ -7,6 +7,18 @@
   min-height: 100vh;
 }
 
+.title { 
+    font-size: 3.5rem;
+
+}
+
+.appheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6rem;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

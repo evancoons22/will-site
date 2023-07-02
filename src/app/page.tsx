@@ -1,95 +1,70 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+// import Image from 'next/image'
+import styles from './page2.module.css';
+import { useState } from 'react';
+import VideoGallery from '../../components/video';
+import PhotoGallery from '../../components/photo';
+import AboutMe from '../../components/about';
+
 
 export default function Home() {
+
+    const [media, setMedia] = useState('video');
+
+    const handleClick = (value: string) => { 
+        console.log('buttonclicked');
+        setMedia(value);
+    }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  <div className={styles.main}>
+
+      <div className={styles.appheader}>
+          <div className={styles.titlecomponent}> 
+          <div>
+          logo here
+          </div>
+          </div>
+          <div className={styles.titlecomponent}> 
+              <div className={styles.icon} >
+                icon1
+              </div>
+              <div className={styles.icon}>
+                icon2
+              </div>
+              <div className={styles.icon} >
+                icon3
+              </div>
+          </div>
+      </div> 
+
+      <div className={styles.bio}>
+        <div className={styles.biotitle}> 
+            Will Coons
+        </div>
+        <div className={styles.biotext}>
+            title
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles.selector}>
+            <button className={styles.mediatypebutton} onClick={() => handleClick('video')}>
+            Video 
+            </button>
+            <button className={styles.mediatypebutton} onClick={() => handleClick('photo')}>
+            Photo
+            </button>
+            <button className={styles.mediatypebutton} onClick={() => handleClick('about')}>
+            About
+            </button>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className={styles.media}>
+          {media === 'video' && <VideoGallery />}
+          {media === 'photo' && <PhotoGallery />}
+          {media === 'about' && <AboutMe />}
       </div>
-    </main>
+
+  </div>
   )
 }
