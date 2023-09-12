@@ -22,6 +22,9 @@ export default function Home() {
       <div className={styles.appheader}>
           <div className={styles.titlecomponent}> 
           <div>
+
+          <img src="logo.png" alt="my image" width="100" height="100" />
+
           logo here
           </div>
           </div>
@@ -40,10 +43,10 @@ export default function Home() {
 
       <div className={styles.bio}>
         <div className={styles.biotitle}> 
-            Will Coons
+        WILL COONS
         </div>
         <div className={styles.biotext}>
-            title
+        Cinematographer and Editor
         </div>
       </div>
 
